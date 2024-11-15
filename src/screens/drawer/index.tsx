@@ -1,10 +1,43 @@
-import { View, Text, StyleSheet } from "react-native";
+import { Ionicons }  from '@expo/vector-icons'
+import { createDrawerNavigator } from '@react-navigation/drawer'
+import { NavigationContainer } from '@react-navigation/native';
+import { StyleSheet } from "react-native";
+import  Inicio  from './inicio'
 
 export default function App(){
+    const Drawer = createDrawerNavigator()
+
+    function tela(props: {nome: string; icone: string; titulo: string; componente: any}){
+        return(
+            <Drawer.Screen
+            name={props.nome}
+            component={props.componente}
+            options={{
+                drawerIcon: ({ focused }: any) => (
+                    <Ionicons
+                    name={props.icone as any}
+                    size={24}
+                    color={focused ? '#1C80FF' : '#000'}
+                    />
+                ),
+                drawerLabel: props.titulo,
+                title: props.titulo,
+            }}
+            />
+        )
+    }
     return (
-        <View style={styles.container}>
-            <Text style={styles.texto}>App</Text>
-        </View>
+        <NavigationContainer>
+            <Drawer.Navigator>
+                {tela({
+                    nome: 'Inicio',
+                    icone: 'home-outline',
+                    titulo: 'Inicio',
+                    componente: Inicio,
+                })}
+            </Drawer.Navigator>
+
+        </NavigationContainer>
     )
 }
 

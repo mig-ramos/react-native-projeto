@@ -1,8 +1,12 @@
-import { View, Text, StyleSheet } from "react-native";
+import { Image, View, Text, StyleSheet } from "react-native";
 
 export default function Inicio(){
     return(
         <View style={styles.container}>
+            <Image
+            style={styles.imagem}
+            source={require('../../../assets/images/react-logo.png')}
+        />
         <Text style={styles.titulo}>React Native Essencial</Text>
         <Text style={styles.ajuda}>
             Use o Drawer Navigation na parte superior esquerda da tela para navegar!
@@ -16,6 +20,10 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    imagem: {
+        width: 200,
+        height: 200,
     },
     titulo: {
         fontSize: 24,
