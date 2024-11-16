@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { StyleSheet } from "react-native";
 import Inicio from './Inicio'
 import Texto from './Texto';
+import Imagem from './Imagem';
 
 export default function App() {
     const Drawer = createDrawerNavigator()
@@ -42,6 +43,13 @@ export default function App() {
                     icone: 'text-outline',
                     titulo: 'Texto',
                     componente: Texto,
+                })}
+
+                {tela({
+                    nome: 'Imagem',
+                    icone: 'image-outline',
+                    titulo: 'Imagem',
+                    componente: Imagem,
                 })}
             </Drawer.Navigator>
 
