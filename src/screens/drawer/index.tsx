@@ -5,6 +5,8 @@ import { StyleSheet } from "react-native";
 import Inicio from './Inicio'
 import Texto from './Texto';
 import Imagem from './Imagem';
+import Rolagem from './Rolagem';
+import Botao from './Botao';
 
 export default function App() {
     const Drawer = createDrawerNavigator()
@@ -50,6 +52,20 @@ export default function App() {
                     icone: 'image-outline',
                     titulo: 'Imagem',
                     componente: Imagem,
+                })}
+
+                {tela({
+                    nome: 'Rolagem',
+                    icone: 'list-outline',
+                    titulo: 'Rolagem',
+                    componente: Rolagem,
+                })}
+
+                {tela({
+                    nome: 'Botao',
+                    icone: 'ellipse-outline',
+                    titulo: 'Botão',
+                    componente: Botao,
                 })}
             </Drawer.Navigator>
 
