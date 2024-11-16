@@ -9,6 +9,7 @@ import Rolagem from './Rolagem';
 import Botao from './Botao';
 import Pressionavel from './Pressionavel';
 import Entrada from './Entrada';
+import Pilha from '../stack';
 
 export default function App() {
     const Drawer = createDrawerNavigator()
@@ -82,6 +83,13 @@ export default function App() {
                     icone: 'key-outline',
                     titulo: 'Entrada',
                     componente: Entrada,
+                })}
+
+                {tela({
+                    nome: 'Stack',
+                    icone: 'layers-outline',
+                    titulo: 'Stack',
+                    componente: Pilha,
                 })}
 
             </Drawer.Navigator>
