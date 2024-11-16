@@ -7,6 +7,7 @@ import Texto from './Texto';
 import Imagem from './Imagem';
 import Rolagem from './Rolagem';
 import Botao from './Botao';
+import Pressionavel from './Pressionavel';
 
 export default function App() {
     const Drawer = createDrawerNavigator()
@@ -67,6 +68,14 @@ export default function App() {
                     titulo: 'Botão',
                     componente: Botao,
                 })}
+
+                {tela({
+                    nome: 'Pressionavel',
+                    icone: 'finger-print',
+                    titulo: 'Pressionável',
+                    componente: Pressionavel,
+                })}
+
             </Drawer.Navigator>
 
         </NavigationContainer>
