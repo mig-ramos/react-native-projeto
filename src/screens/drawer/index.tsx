@@ -8,6 +8,7 @@ import Imagem from './Imagem';
 import Rolagem from './Rolagem';
 import Botao from './Botao';
 import Pressionavel from './Pressionavel';
+import Entrada from './Entrada';
 
 export default function App() {
     const Drawer = createDrawerNavigator()
@@ -74,6 +75,13 @@ export default function App() {
                     icone: 'finger-print',
                     titulo: 'Pressionável',
                     componente: Pressionavel,
+                })}
+
+                {tela({
+                    nome: 'Entrada',
+                    icone: 'key-outline',
+                    titulo: 'Entrada',
+                    componente: Entrada,
                 })}
 
             </Drawer.Navigator>
