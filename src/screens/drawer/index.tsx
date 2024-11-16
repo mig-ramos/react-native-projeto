@@ -1,28 +1,29 @@
-import { Ionicons }  from '@expo/vector-icons'
+import { Ionicons } from '@expo/vector-icons'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import { NavigationContainer } from '@react-navigation/native';
 import { StyleSheet } from "react-native";
-import  Inicio  from './inicio'
+import Inicio from './Inicio'
+import Texto from './Texto';
 
-export default function App(){
+export default function App() {
     const Drawer = createDrawerNavigator()
 
-    function tela(props: {nome: string; icone: string; titulo: string; componente: any}){
-        return(
+    function tela(props: { nome: string; icone: string; titulo: string; componente: any }) {
+        return (
             <Drawer.Screen
-            name={props.nome}
-            component={props.componente}
-            options={{
-                drawerIcon: ({ focused }: any) => (
-                    <Ionicons
-                    name={props.icone as any}
-                    size={24}
-                    color={focused ? '#1C80FF' : '#000'}
-                    />
-                ),
-                drawerLabel: props.titulo,
-                title: props.titulo,
-            }}
+                name={props.nome}
+                component={props.componente}
+                options={{
+                    drawerIcon: ({ focused }: any) => (
+                        <Ionicons
+                            name={props.icone as any}
+                            size={24}
+                            color={focused ? '#1C80FF' : '#000'}
+                        />
+                    ),
+                    drawerLabel: props.titulo,
+                    title: props.titulo,
+                }}
             />
         )
     }
@@ -34,6 +35,13 @@ export default function App(){
                     icone: 'home-outline',
                     titulo: 'Inicio',
                     componente: Inicio,
+                })}
+
+                {tela({
+                    nome: 'Texto',
+                    icone: 'text-outline',
+                    titulo: 'Texto',
+                    componente: Texto,
                 })}
             </Drawer.Navigator>
 
